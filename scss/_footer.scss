@@ -1,0 +1,24 @@
+.footer {
+  height: 80px;
+  line-height: 50px;
+}
+
+.footer_list {
+  display: flex;
+  justify-content: center;
+}
+.footer_item {
+  font-size: 1.6rem;
+  margin: 0 20px;
+  a {
+    &:hover {
+      text-decoration: underline;
+      color: $a_color;
+    }
+  }
+}
+@media (max-width:599px) {
+  .footer_list {
+    flex-direction: column;
+  }
+}
