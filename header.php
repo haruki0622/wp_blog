@@ -6,6 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://kit.fontawesome.com/0103b45dcf.js" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-221023013-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-221023013-1');
+  </script>
   <title>haruharu</title>
   <?php wp_head(); ?>
 </head>
@@ -13,10 +23,12 @@
   <div class="container">
   <header class="header">
     <div class="header_logo">
+    <?php if(is_front_page()){ echo '<h1>';}else{ echo '<p>';} ?>
+      <a href="/">
+        <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" alt="">
+      </a>
+    <?php if(is_front_page()){ echo '</h1>';}else{ echo '</p>';} ?>
       <h1>
-        <a href="/">
-          <img src="<?php echo get_template_directory_uri(); ?>/images/logo1.png" alt="">
-        </a>
       </h1>
     </div>
     <div class="header_nav">
