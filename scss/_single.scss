@@ -156,9 +156,11 @@ ul.snsshare {
   }
   ol {
     margin: 2rem 0;
+    padding-inline-start: 0;
   }
   ol li {
     list-style: numbers;
+    list-style-position:inside;
   }
 
   li {
@@ -197,9 +199,9 @@ ul.snsshare {
   }
   code {
     background-color: #f5f5f5;
-    padding: 8px;
     border-radius: 4px;
     color: #222;
+    padding:5px;
   }
   code[class*="language-"],
   pre[class*="language-"] {
@@ -262,6 +264,15 @@ ul.snsshare {
     }
     img {
       margin-bottom: 4rem;
+    }
+    .internal_link {
+      padding: 7px;
+      a {
+        font-size:1.4rem;
+      }
+      .internal_text {
+        font-size:1.4rem;
+      }
     }
   }
   .blog_body code[class*="language-"],

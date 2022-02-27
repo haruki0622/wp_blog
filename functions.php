@@ -19,7 +19,33 @@ add_action('wp_enqueue_scripts', 'add_stylesheet');
   // wp_enqueue_scriptsフックにadd_stylesheet関数を登録
 add_theme_support('post-thumbnails');
 
+// 内部リンクのショートコード作成
+function linkpage_func ( $atts ) {
+  extract( shortcode_atts( array(
+      'id' => '', //投稿ID
+      'slug' => '', //ページスラッグ
+  ), $atts ) );
+  $my_url = home_url( '/' );
+  if($slug){ //スラッグを指定したときに投稿IDを取得する
+      $id = url_to_postid($my_url. $slug);
+  }
+  $link = get_permalink($id);
+  $title = get_the_title($id); //投稿IDで指定した投稿のレコードをデータベースから取得
+  return '<div class="internal_link">
+            <p>
+              <span class="internal_text">参考</span>
+              <a href="'. $link .'"' .'target="_blanck">'. $title. '</a>
+            </p>
+          </div>';
+}
+add_shortcode('pagelink', 'linkpage_func');
 
+// 全てのリンクにtargetを付与する
+function autoblank($text) {
+  $return = str_replace('<a', '<a target="_blank"', $text);
+  return $return;
+  }
+add_filter('the_content', 'autoblank');
 
 /**
  * 目次ショートコードです。
