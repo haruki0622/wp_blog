@@ -40,6 +40,30 @@ function linkpage_func ( $atts ) {
 }
 add_shortcode('pagelink', 'linkpage_func');
 
+// 要約ショートコード
+function list_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+      'title' => '',
+	), $atts ) );
+
+	return '<div class="list">
+            <p>' . $title . '</p>
+            <ul>
+            </ul>
+          </div>';
+}
+add_shortcode( 'list', 'list_shortcode');
+
+// リストショートコード
+function summary_shortcode( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+			'content'  => '',
+	), $atts ) );
+
+	return '<div class="summary"><p><span class="summary_point">記事の要約</span>' . $content . '</p></div>';
+}
+add_shortcode( 'summary', 'summary_shortcode');
+
 // 全てのリンクにtargetを付与する
 function autoblank($text) {
   $return = str_replace('<a', '<a target="_blank"', $text);
