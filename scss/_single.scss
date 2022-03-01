@@ -133,6 +133,7 @@ ul.snsshare {
       font-size: 2rem;
       display: block;
       margin-bottom: 5px;
+      border-radius:5px;
     }
   }
   h2 {
@@ -263,6 +264,13 @@ ul.snsshare {
   }
   .blog_body {
     padding: 6px;
+    .summary {
+      padding: 5px 10px;
+        .summary_point {
+          font-size: 1.6rem;
+          margin-bottom: 2px;
+        }
+    }
     h2 {
       font-size: 2.3rem;
       margin: 29px 0 18px;
