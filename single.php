@@ -24,6 +24,23 @@
     <?php // 本文を表示する start ?>
     <div class="blog_detail__body">
         <div class="blog_body"><?php the_content(); ?></div>
+        <div class="blog_profile_wrapper">
+          <p class="writer-info">Writer info</p>
+          <div class="blog_profile">
+            <div class="blog_profile_img">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/profile.webp" alt="プロフィール写真">
+            </div>
+            <div class="blog_profile_text">
+              <p>泉原 遥輝 | Haruki Izumihara</p>
+              <p>フリーランスのエンジニアです。Web制作や、LP、Pythonを使った自動化ツールなどをメインにお仕事をしています。お気軽にお問い合わせください!</p>
+              <ul>
+                <li><a href="https://next-js-portfolio-rouge.vercel.app/" target="_blank">🙈ポートフォリオ</a></li>
+                <li><a href="https://twitter.com/haruharu_0622x" target="_blank"><i class="fab fa-twitter"></i>Twitter</a></li>
+                <li><a href="https://github.com/haruki0622" target="_blank"><i class="fab fa-github"></i>Github</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
     </div>
     <?php // 本文を表示する end ?>
     <?php endwhile; endif; ?>
