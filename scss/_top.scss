@@ -12,14 +12,14 @@
   color: $gray;
 }
 
-.blog_contents {
+.blog_contents   {
   margin: 100px 0;
 }
 .blog_content {
   display:block;
   display: flex;
   justify-content: space-around;
-  padding: 50px 0 ;
+  padding: 120px 0 ;
   border-bottom: 2px solid lightgray;
 }
 .blog_thumbnail {
